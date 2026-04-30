@@ -1,10 +1,11 @@
 /**
  * @name DuplicateSendGuard
  * @author master3395
- * @version 1.0.2
+ * @version 1.0.3
  * @description Warns before sending a message that matches your own recent message in the same channel.
- * @website https://newstargeted.com
  * @invite nx9Kzrk
+ * @donate https://www.paypal.com/paypalme/KimBS
+ * @website https://newstargeted.com
  * @source https://github.com/master3395/BetterDiscord-Collections
  */
 

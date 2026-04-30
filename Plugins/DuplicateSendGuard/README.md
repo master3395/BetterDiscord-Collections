@@ -1,5 +1,5 @@
 # DuplicateSendGuard
-*(plugin header: `1.0.2`)*
+*(plugin header: `1.0.3`)*
 
 ## About
 
@@ -29,6 +29,7 @@ https://github.com/master3395/BetterDiscord-Collections/tree/main/Plugins/Duplic
 - **Author:** master3395
 - **Website / project page:** [newstargeted.com](https://newstargeted.com)
 - **Discord invite (support):** [discord.gg/nx9Kzrk](https://discord.gg/nx9Kzrk)
+- **Donate:** [PayPal.Me](https://www.paypal.com/paypalme/KimBS)
 - **Upstream source:** [link](https://github.com/master3395/BetterDiscord-Collections)
 ## Collection
 Maintained copy in this monorepo: see the [collection README](../../README.md) for layout, updates, and other plugins.

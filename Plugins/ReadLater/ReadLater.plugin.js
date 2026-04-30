@@ -1,10 +1,11 @@
 /**
  * @name Read Later
  * @author master3395
- * @version 1.2.21
+ * @version 1.2.22
  * @description Local-only queue of message links (Read later). Not channel tabs - manage from plugin settings or open jump links.
- * @website https://newstargeted.com
  * @invite nx9Kzrk
+ * @donate https://www.paypal.com/paypalme/KimBS
+ * @website https://newstargeted.com
  * @source https://github.com/master3395/BetterDiscord-Collections
  */
 

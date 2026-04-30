@@ -1,0 +1,7 @@
+# BetterDiscord local runtime (do not commit)
+*.config.json
+0BDFDB.data.json
+0BDFDB.raw.css
+
+# Flat copies for BD root load path (source of truth: Plugins/<Name>/*.plugin.js only)
+/*.plugin.js

@@ -1,5 +1,5 @@
 # Read Later
-*(plugin header: `1.2.20`)*
+*(plugin header: `1.2.21`)*
 
 ## About
 
@@ -28,6 +28,8 @@ https://github.com/master3395/BetterDiscord-Collections/tree/main/Plugins/ReadLa
 ```
 ## Upstream & credits
 - **Author:** master3395
+- **Website / project page:** [newstargeted.com](https://newstargeted.com)
+- **Discord invite (support):** [discord.gg/nx9Kzrk](https://discord.gg/nx9Kzrk)
 - **Upstream source:** [link](https://github.com/master3395/BetterDiscord-Collections)
 ## Collection
 Maintained copy in this monorepo: see the [collection README](../../README.md) for layout, updates, and other plugins.

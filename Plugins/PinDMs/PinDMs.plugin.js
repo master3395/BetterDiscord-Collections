@@ -2,7 +2,7 @@
  * @name PinDMs
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 2.0.7
+ * @version 2.0.8
  * @description Allows you to pin DMs, making them appear at the top of your DMs/ServerList
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -393,13 +393,21 @@ module.exports = (_ => {
 					for (let category of [].concat(categories).reverse()) {
 						e.instance.props.pinnedChannelIds[category.id] = [];
 						for (let id of this.sortDMsByTime(this.filterDMs(category.dms, !category.predefined), "channelList").reverse()) {
-							BDFDB.ArrayUtils.remove(e.instance.props.privateChannelIds, id, true);
-							e.instance.props.privateChannelIds.unshift(id);
 							e.instance.props.pinnedChannelIds[category.id].push(id);
 						}
 					}
 				}
 				else {
+					if (e.returnvalue && e.returnvalue.props && BDFDB.ArrayUtils.is(e.returnvalue.props.sections)) {
+						let pinnedFlat = [];
+						for (let catId in e.instance.props.pinnedChannelIds) {
+							let arr = e.instance.props.pinnedChannelIds[catId];
+							if (BDFDB.ArrayUtils.is(arr)) for (let id of arr) if (!pinnedFlat.includes(id)) pinnedFlat.push(id);
+						}
+						if (pinnedFlat.length) {
+							e.instance.props.privateChannelIds = (e.instance.props.privateChannelIds || []).filter(id => !pinnedFlat.includes(id));
+						}
+					}
 					BDFDB.PatchUtils.unpatch(this, e.instance, "renderDM");
 					if (!this._pindmsCompatModeLogged) {
 						this._pindmsCompatModeLogged = true;
@@ -420,7 +428,8 @@ module.exports = (_ => {
 					returnvalue.props.sections.push(instance.state.preRenderedChildren);
 					let shownPinnedIds = BDFDB.ObjectUtils.toArray(instance.props.pinnedChannelIds).reverse();
 					for (let ids of shownPinnedIds) returnvalue.props.sections.push(ids.length || 1);
-					returnvalue.props.sections.push(instance.props.privateChannelIds.length - shownPinnedIds.flat().length);
+					let tailDmCount = (instance.props.privateChannelIds && instance.props.privateChannelIds.length) || 0;
+					returnvalue.props.sections.push(tailDmCount);
 					
 					let sectionHeight = returnvalue.props.sectionHeight;
 					let sectionHeightFunc = typeof sectionHeight != "function" ? _ => sectionHeight : sectionHeight;

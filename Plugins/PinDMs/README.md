@@ -1,5 +1,5 @@
 # PinDMs
-*(plugin header: `2.0.7`)*
+*(plugin header: `2.0.8`)*
 
 ## About
 
